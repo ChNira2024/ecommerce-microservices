@@ -1,0 +1,91 @@
+Recommended path for you
+-----------------------------
+Now:Feign with URL → quick working(@FeignClient(name = "product-service", url = "http://localhost:8104"))
+Next: Add LoadBalancer dependency
+Later: Add Eureka → remove URLs → use lb:// (Production ready so i choose this one)
+
+Without Loadbalancer settings in ApiGateway
+------------------------------------------
+cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: http://localhost:8103
+              predicates:
+                - Path=/api/users/**
+
+With LoadBalancer settings in ApiGateway
+------------------------------------------
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: user-service
+              uri: lb://user-service
+              predicates:
+                - Path=/api/users/**
+REsillence
+=============
+resilience4j.circuitbreaker.instances.productService.failure-rate-threshold=50
+resilience4j.circuitbreaker.instances.productService.sliding-window-size=5
+resilience4j.circuitbreaker.instances.productService.wait-duration-in-open-state=10s
+resilience4j.circuitbreaker.instances.productService.permitted-number-of-calls-in-half-open-state=2                
+
+failure-rate-threshold=50
+-----------------------------
+If 50% of calls fail → circuit opens
+Example:
+Total calls = 10
+Failed calls = 5
+5/10 = 50% → Circuit opens
+
+sliding-window-size=5
+---------------------------
+👉 How many recent calls to consider: Only last 5 calls are checked
+Example:
+Last 5 calls result: ✔ ❌ ❌ ✔ ❌
+Failures = 3/5 = 60%
+👉 Above 50% → Circuit opens
+
+wait-duration-in-open-state=10s
+-------------------------------
+👉 How long circuit stays OPEN: Circuit stays OPEN for 10 seconds
+During this time: Cart → Product call ❌ blocked → fallback method called directly
+
+permitted-number-of-calls-in-half-open-state=2
+------------------------------------------------
+👉 After 10 seconds, circuit goes to HALF-OPEN
+Allow only 2 test calls
+Case:
+✔ If both succeed: Circuit CLOSES (normal again)
+❌ If any fails: Circuit OPENS again             
+   
+===============================================
+# Log level
+logging.level.root=INFO
+logging.level.com.niranjana=DEBUG
+
+# ✅ File size limit (VERY IMPORTANT)
+logging.logback.rollingpolicy.max-file-size=10MB
+
+# ✅ Keep old logs (backup files)
+logging.logback.rollingpolicy.max-history=7
+
+# ✅ Total size cap (all logs together)
+logging.logback.rollingpolicy.total-size-cap=100MB
+
+# ✅ File name pattern (rolling)
+logging.logback.rollingpolicy.file-name-pattern=logs/order-service-%d{yyyy-MM-dd}.%i.log
+   
+                
+Startup Order (VERY IMPORTANT)
+-------------------------------
+1. Eureka Server (8761)
+2. User Service (8103)
+3. Product Service (8104)
+4. Cart Service (8105)
+5. API Gateway (8107)                                

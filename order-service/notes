@@ -1,0 +1,14 @@
+Order Service Responsibilities
+================================
+Order-service should handle:
+✔ 1. Place Order
+Reads cart items
+Creates order record
+✔ 2. Validate User
+Calls user-service
+✔ 3. Validate Product + Stock
+Calls product-service
+✔ 4. Calculate Total Price
+From cart-service OR product-service
+✔ 5. Publish Event (optional later)
+Kafka / RabbitMQ (future enhancement)

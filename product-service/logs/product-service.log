@@ -1,0 +1,250 @@
+2026-05-02T14:23:54.132+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-02T14:23:54.136+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-02T14:23:54.136+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-02T14:23:54.239+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.controller.ProductController     : Request: Create product name=Lenovo
+2026-05-02T14:23:54.239+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.service.impl.ProductServiceImpl  : Creating product: name=Lenovo
+2026-05-02T14:23:54.417+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.service.impl.ProductServiceImpl  : Product created successfully, id=6
+2026-05-02T14:23:54.417+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: productId=6, stock=5
+2026-05-02T14:23:54.417+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: ProductEvent [productId=6, stockQuantity=5]
+2026-05-02T14:23:54.467+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = product-service-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-05-02T14:23:54.534+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-05-02T14:23:54.566+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=product-service-producer-1] Instantiated an idempotent producer.
+2026-05-02T14:23:54.665+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-05-02T14:23:54.665+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-05-02T14:23:54.665+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777712034658
+2026-05-02T14:23:55.520+05:30  WARN 19420 --- [product-service] [kafka-producer-network-thread | product-service-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=product-service-producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 2 : {product-topic-microservices-producer=LEADER_NOT_AVAILABLE}
+2026-05-02T14:23:55.524+05:30  INFO 19420 --- [product-service] [kafka-producer-network-thread | product-service-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=product-service-producer-1] Cluster ID: Hw03Xa2qTEaBMrvTE9-BFQ
+2026-05-02T14:23:55.613+05:30  INFO 19420 --- [product-service] [kafka-producer-network-thread | product-service-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=product-service-producer-1] ProducerId set to 0 with epoch 0
+2026-05-02T14:23:55.637+05:30  WARN 19420 --- [product-service] [kafka-producer-network-thread | product-service-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=product-service-producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 7 : {product-topic-microservices-producer=LEADER_NOT_AVAILABLE}
+2026-05-02T14:23:55.854+05:30  WARN 19420 --- [product-service] [kafka-producer-network-thread | product-service-producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=product-service-producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 8 : {product-topic-microservices-producer=LEADER_NOT_AVAILABLE}
+2026-05-02T14:23:56.347+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.service.impl.ProductServiceImpl  : ProductCreatedEvent sent for productId=6
+2026-05-02T14:23:56.363+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.controller.ProductController     : Product created: {"id":6,"name":"Lenovo","description":"Latest lenovo model","price":45000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/Lenovo-ideal.jpg","active":true}
+2026-05-02T14:28:12.673+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T14:30:12.318+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.controller.ProductController     : Request: Create product name=Google Plex
+2026-05-02T14:30:12.318+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.service.impl.ProductServiceImpl  : Creating product: name=Google Plex
+2026-05-02T14:30:12.336+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.service.impl.ProductServiceImpl  : Product created successfully, id=7
+2026-05-02T14:30:12.336+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: productId=7, stock=5
+2026-05-02T14:30:12.336+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: ProductEvent [productId=7, stockQuantity=5]
+2026-05-02T14:30:12.344+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.service.impl.ProductServiceImpl  : ProductCreatedEvent sent for productId=7
+2026-05-02T14:30:12.344+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.controller.ProductController     : Product created: {"id":7,"name":"Google Plex","description":"Latest Googl pixel mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/google-plex.jpg","active":true}
+2026-05-02T14:32:41.959+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.p.controller.ProductController     : Request: Create product name=IPhone17 Pro
+2026-05-02T14:32:41.959+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.p.service.impl.ProductServiceImpl  : Creating product: name=IPhone17 Pro
+2026-05-02T14:32:41.974+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.p.service.impl.ProductServiceImpl  : Product created successfully, id=8
+2026-05-02T14:32:41.974+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: productId=8, stock=5
+2026-05-02T14:32:41.974+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: ProductEvent [productId=8, stockQuantity=5]
+2026-05-02T14:32:41.976+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.p.service.impl.ProductServiceImpl  : ProductCreatedEvent sent for productId=8
+2026-05-02T14:32:41.976+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-9] c.n.e.p.controller.ProductController     : Product created: {"id":8,"name":"IPhone17 Pro","description":"Latest IPhone mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/iPhone17 Pro.jpg","active":true}
+2026-05-02T14:33:12.682+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T14:33:13.089+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.p.controller.ProductController     : Request: Create product name=IPhone17 Pro Max
+2026-05-02T14:33:13.089+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.p.service.impl.ProductServiceImpl  : Creating product: name=IPhone17 Pro Max
+2026-05-02T14:33:13.108+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.p.service.impl.ProductServiceImpl  : Product created successfully, id=9
+2026-05-02T14:33:13.113+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: productId=9, stock=5
+2026-05-02T14:33:13.113+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.product.producer.ProductProducer   : Sending event to Kafka: ProductEvent [productId=9, stockQuantity=5]
+2026-05-02T14:33:13.113+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.p.service.impl.ProductServiceImpl  : ProductCreatedEvent sent for productId=9
+2026-05-02T14:33:13.113+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-8] c.n.e.p.controller.ProductController     : Product created: {"id":9,"name":"IPhone17 Pro Max","description":"Latest IPhone mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/iPhone17 Pro Max.jpg","active":true}
+2026-05-02T14:38:12.698+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T14:38:36.225+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-5] c.n.e.p.controller.ProductController     : Request: Get product id=9
+2026-05-02T14:38:36.230+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-5] c.n.e.p.service.impl.ProductServiceImpl  : Inside ProductServiceImpl - getProductById method, id=9
+2026-05-02T14:38:36.230+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-5] c.n.e.p.service.impl.ProductServiceImpl  : Fetching product by id=9
+2026-05-02T14:38:36.402+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-5] c.n.e.p.service.impl.ProductServiceImpl  : Product found id=9
+2026-05-02T14:38:36.402+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-5] c.n.e.p.controller.ProductController     : Response: {"id":9,"name":"IPhone17 Pro Max","description":"Latest IPhone mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/iPhone17 Pro Max.jpg","active":true}
+2026-05-02T14:39:29.737+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.controller.ProductController     : Request: Get product id=3
+2026-05-02T14:39:29.739+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.service.impl.ProductServiceImpl  : Inside ProductServiceImpl - getProductById method, id=3
+2026-05-02T14:39:29.739+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.service.impl.ProductServiceImpl  : Fetching product by id=3
+2026-05-02T14:39:29.744+05:30  WARN 19420 --- [product-service] [http-nio-8104-exec-1] c.n.e.p.service.impl.ProductServiceImpl  : Product not found id=3
+2026-05-02T14:39:29.750+05:30 ERROR 19420 --- [product-service] [http-nio-8104-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: com.niranjana.ecommerce.product.exception.ProductNotFoundException: Product not found with id: 3] with root cause
+
+com.niranjana.ecommerce.product.exception.ProductNotFoundException: Product not found with id: 3
+	at com.niranjana.ecommerce.product.service.impl.ProductServiceImpl.lambda$5(ProductServiceImpl.java:128) ~[classes/:na]
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[na:na]
+	at com.niranjana.ecommerce.product.service.impl.ProductServiceImpl.getProductById(ProductServiceImpl.java:126) ~[classes/:na]
+	at com.niranjana.ecommerce.product.controller.ProductController.getProductById(ProductController.java:60) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.54.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.18.jar:6.2.18]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.54.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:110) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.18.jar:6.2.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.54.jar:10.1.54]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-05-02T14:40:37.178+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-6] c.n.e.p.controller.ProductController     : Request: Get product id=9
+2026-05-02T14:40:37.178+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-6] c.n.e.p.service.impl.ProductServiceImpl  : Inside ProductServiceImpl - getProductById method, id=9
+2026-05-02T14:40:37.178+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-6] c.n.e.p.service.impl.ProductServiceImpl  : Fetching product by id=9
+2026-05-02T14:40:37.181+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-6] c.n.e.p.service.impl.ProductServiceImpl  : Product found id=9
+2026-05-02T14:40:37.185+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-6] c.n.e.p.controller.ProductController     : Response: {"id":9,"name":"IPhone17 Pro Max","description":"Latest IPhone mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/iPhone17 Pro Max.jpg","active":true}
+2026-05-02T14:42:48.446+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.controller.ProductController     : Request: Get product id=9
+2026-05-02T14:42:48.446+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.service.impl.ProductServiceImpl  : Inside ProductServiceImpl - getProductById method, id=9
+2026-05-02T14:42:48.446+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.service.impl.ProductServiceImpl  : Fetching product by id=9
+2026-05-02T14:42:48.453+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.service.impl.ProductServiceImpl  : Product found id=9
+2026-05-02T14:42:48.453+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-3] c.n.e.p.controller.ProductController     : Response: {"id":9,"name":"IPhone17 Pro Max","description":"Latest IPhone mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/iPhone17 Pro Max.jpg","active":true}
+2026-05-02T14:43:12.708+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T14:44:35.212+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-4] c.n.e.p.controller.ProductController     : Request: Get product id=9
+2026-05-02T14:44:35.214+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-4] c.n.e.p.service.impl.ProductServiceImpl  : Inside ProductServiceImpl - getProductById method, id=9
+2026-05-02T14:44:35.214+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-4] c.n.e.p.service.impl.ProductServiceImpl  : Fetching product by id=9
+2026-05-02T14:44:35.214+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-4] c.n.e.p.service.impl.ProductServiceImpl  : Product found id=9
+2026-05-02T14:44:35.214+05:30  INFO 19420 --- [product-service] [http-nio-8104-exec-4] c.n.e.p.controller.ProductController     : Response: {"id":9,"name":"IPhone17 Pro Max","description":"Latest IPhone mobile model","price":68000.00,"stockQuantity":5,"category":"Electronics","imageUrl":"https://example.com/images/iPhone17 Pro Max.jpg","active":true}
+2026-05-02T14:48:12.716+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T14:53:12.736+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T14:58:12.751+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:03:12.760+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:08:12.770+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:13:12.773+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:18:12.782+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:23:12.786+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:28:12.796+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:33:12.807+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:38:12.823+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:43:12.838+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:48:12.852+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:53:12.867+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T15:58:12.871+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:03:12.875+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:08:12.881+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:13:12.898+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:18:12.905+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:23:12.908+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:28:12.918+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:33:12.935+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:38:12.952+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-02T16:43:12.957+05:30  INFO 19420 --- [product-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
