@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.niranjana.ecommerce</groupId>
+    <artifactId>ecommerce-microservices</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+		<module>eureka-server</module>
+		<module>user-service</module>
+		<module>product-service</module>
+		<module>cart-service</module>
+		<module>api-gateway</module>
+        <module>order-service</module>
+        <module>inventory-service</module>
+        <module>payment-service</module>
+		<module>notification-service</module>
+    </modules>
+</project>
